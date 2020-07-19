@@ -17,6 +17,11 @@ public class App {
     //psvm + tab
     public static void main(String[] args) {
 
+        Person julia = new Person("Julia");
+        System.out.println(julia);
+
+        String a = julia.name;
+        String b = julia.name();
 
     }
 
