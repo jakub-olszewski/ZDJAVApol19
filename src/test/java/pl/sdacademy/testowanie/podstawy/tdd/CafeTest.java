@@ -4,6 +4,7 @@ package pl.sdacademy.testowanie.podstawy.tdd;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -15,25 +16,28 @@ import static org.junit.Assert.assertTrue;
  **/
 public class CafeTest {
 
+    private Cafe cafe;
+
+    @Before
+    public void before(){
+        //given
+        cafe = new Cafe();
+    }
+
 
     @Test
     public void shouldServeCoffee() {
-
-        //given
-        Cafe cafe = new Cafe();
 
         // when
         cafe.serveCoffee();
 
         // then
         assertTrue(cafe.canServeCoffee());
+        assertThat(cafe.canServeCoffee()).isTrue();
     }
 
     @Test
     public void shouldNotServeCoffee() {
-
-        //given
-        Cafe cafe = new Cafe();
 
         // when
         //cafe.serveCoffee();
